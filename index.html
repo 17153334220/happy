@@ -1,10 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
-    <title>加17153334220 看奇异,qq,youku,vip电影</title>
+    <title>加17153334220 看vip电影</title>
+    <style>
+        html, body
+        {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            overflow:hidden;
+        }
+        #frame
+        {
+            height: 100%;
+            width:100%;
+            z-index: 0;
+        }
+    </style>
+    <script
+            src="http://code.jquery.com/jquery-1.12.4.js"
+            integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+            crossorigin="anonymous"></script>
 </head>
-<body>
+<body >
 
+
+<script>
+    $(function(){
+        function getQueryString(name)
+        {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null)return  unescape(r[2]); return null;
+        }
+
+
+        var url = "http://api.tv6.com/api/?url="+getQueryString("url");
+
+        $("#frame").attr("src",url);
+    });
+
+</script>
+<!--http://api.30pan.com/api/?url-->
+<iframe src="" frameborder="0" scrolling="no"  id="frame">
+
+
+</iframe>
+
+
+
+,
 </body>
 </html>
