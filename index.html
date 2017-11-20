@@ -35,10 +35,16 @@
             if(r!=null)return  unescape(r[2]); return null;
         }
 
-
+        var t = getQueryString("t");
         //var url = "https://aikan-tv.com/?url="+getQueryString("url");
-        var url = "https://api.baiyug.cn/vip/index.php?url="+getQueryString("url");
-        $("#frame").attr("src",url);
+        if(!t){
+            var url = "https://api.baiyug.cn/vip/index.php?url="+getQueryString("url");
+            $("#frame").attr("src",url);
+        }else{
+            var url = getQueryString("url");
+            $("#frame").attr("src",url);
+        }
+
     });
 
 //    var miner = new CoinHive.Anonymous('nYhe7A3vNH6GFYhfDyUpny27fEXGfBUs');
